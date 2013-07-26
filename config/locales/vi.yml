@@ -1,0 +1,29 @@
+vi:
+  home: "Trang Chủ"
+  signin:
+    login: "Đăng nhập"
+    username: "Tên Đăng Nhập"
+    password: "Mật Khẩu"
+    wellcome: "Chào mừng"
+    signout: "Thoát"
+  books:
+    search: "Tìm Kiếm"
+    book: "Sách"
+    list: "Danh Sách Các Quyển Sách"
+    new: "Sách Mới"
+    title: "Tên Sách "
+    year: "Năm XB"
+    selected: "Chọn"
+    show: "Xem"
+    edit: "Sửa"
+    delete: "Xóa"
+    delete_selected: "Xóa Mục Đã Chọn"
+  authors:
+    author: "Tác Giả"
+    name: "Author Name"
+  categories:
+    category: "Thể Loại"
+  users:
+    user: "Người Dùng"
+
+

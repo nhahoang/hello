@@ -1,0 +1,28 @@
+<html>
+<head>
+  <title>Bookshop</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div class="login">
+    <form id="contactform" class="rounded" method="post" action="login">
+      <h3><%= t("signin.login")%></h3>
+   
+      <div class="field">
+          <label for="name"><%= t('signin.username')%>:</label>
+          <input type="text" class="input" name="username" id="name" />
+          <p class="hint">Enter your name.</p>
+      </div>
+       
+      <div class="field">
+          <label for="email"><%= t('signin.password') %>:</label>
+          <input type="password" class="input" name="password" id="email" />
+          <p class="hint">Enter your password.</p>
+      </div>
+   
+      <input type="submit" name="Submit"  class="button" value="<%= t('signin.login') %>" />
+    </form>
+  </div>
+</body>

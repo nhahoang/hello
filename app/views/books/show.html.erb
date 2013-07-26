@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<table>
+  <tr>
+    <td> 
+      <p>
+        <%= image_tag @book.pic.url, width: "200px" %>
+      </p>
+    </td>
+
+    <td>
+      <p>
+        <b>Title:</b>
+        <%= @book.title %>
+      </p>
+
+      <p>
+        <b>Year:</b>
+        <%= @book.year %>
+      </p>
+
+      <p>
+        <b>Category:</b>
+        <%= @book.category.name %>
+      </p>
+
+      <p>
+        <b>Author:</b>
+        <%= @book.author.name %>
+      </p>
+
+      <%= link_to 'Edit', edit_book_path(@book) %> |
+      <%= link_to 'Back', books_path %>
+    </td>
+  </tr>
+</table>

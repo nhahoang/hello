@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookshop</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div id="main">
+
+      <div id="head">
+        <div id="search">
+          <p>
+            <%= link_to_unless I18n.locale == :en, "English", locale: :en %>
+            |
+            <%= link_to_unless I18n.locale == :vi, "Vietnamese", locale: :vi %>
+          </p>
+          <%= form_tag("books/search", method: "get") do %>
+            <%= text_field_tag(:q) %>
+            <%= submit_tag(t('books.search')) %>
+          <% end %>
+        </div>
+
+        <div id="sign_out">
+          <%= t("signin.wellcome") +" "%> <%= link_to(session[:user].fullname, session[:user]) %>
+          <%= link_to button_tag(t('signin.signout')),logout_sessions_path %>
+        </div>
+      </div>
+
+      <div id="head-link">
+        <%= render "layouts/menu" %>
+      </div>
+
+      <div id="left">
+      </div>
+
+      <div id="content">
+          <%= yield %>
+      </div>
+
+      <div id="footer">
+      </div>
+
+    </div>
+  </body>
+</html>

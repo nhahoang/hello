@@ -1,0 +1,37 @@
+<h1>Listing users</h1>
+
+<table id="table_id" class="tablesorter" border="1">
+  <thead>
+    <tr>
+      <th>Fullname</th>
+      <th>Username</th>
+      <th>Role</th>
+      <th>Show</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+</thead>
+
+<tbody>
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.fullname %></td>
+    <td><%= user.username %></td>
+    <td>
+      <% if (user.role == 1)%>
+        <%= "Admin"%>
+      <% else%>
+        <%= "User"%>
+      <% end %>
+    </td>
+    <td><%= link_to image_tag("show.png",title:'Show'), user %></td>
+    <td><%= link_to image_tag("edit.png",title:'Edit'), edit_user_path(user) %></td>
+    <td><%= link_to image_tag("delete.png",title:'Delete'), user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<%= link_to 'New User', new_user_path %>

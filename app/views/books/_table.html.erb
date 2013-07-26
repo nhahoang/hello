@@ -1,0 +1,31 @@
+<table id="table_id" class="tablesorter" border="1">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th><%= t("authors.author") %></th>
+      <th><%= t("books.title") %></th>
+      <th><%= t("books.year") %></th>
+      <th><%= t("categories.category") %></th>
+      <th><%= t("books.selected") %></th>
+      <th><%= t("books.delete") %></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @books.each do |book| %>
+    <tr>
+      <td><%= link_to (image_tag book.pic.url, width: "70px"),book %></td>
+      <td><%= book.author.name %></td>
+      <td><%= link_to book.title, edit_book_path(book)%></td>
+      <td><%= book.year %></td>
+      <td><%= link_to book.category.name, controller: :categories, action: :category_of_books, id: book.category.id %></td>
+      <td><%= check_box_tag 'accept',value = book.id %></td>
+      <td><%= link_to image_tag("delete.png", title: "Delete"), book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  <%#will_paginate @books %>
+  </tbody>
+</table>
+<script type="text/javascript">
+var t = new SortableTable(document.getElementById('table_id'), 100);
+</script>

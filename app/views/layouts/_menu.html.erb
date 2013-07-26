@@ -1,0 +1,34 @@
+<div class="menu">
+  <ul>
+    <li><%= link_to t('home'),books_path %></li>
+
+    <li><%= link_to t('books.book'),books_path %>
+      <ul>
+        <li><%= link_to "List Books",books_path %></li>
+        <li><%= link_to "New Book",new_book_path %></li>
+      </ul>
+    </li>
+
+    <li><%= link_to t('authors.author'),authors_path %>
+      <ul>
+        <li><%= link_to "List Authors",authors_path%></li>
+        <li><%= link_to "New Author", new_author_path %></li>
+      </ul>
+    </li>
+
+    <li><%= link_to t('categories.category'),categories_path %>
+      <ul>
+        <li><%= link_to "List Categories",categories_path %></li>
+        <li><%= link_to "New Category", new_category_path%></li>
+      </ul>
+    </li>
+
+    <li><%= link_to t('users.user'), users_path %>
+      <ul>
+        <li><%= link_to "List Users",users_path %></li>
+        <li><%= link_to "New User", new_user_path %></li>
+      </ul>
+    </li>
+  </ul>
+  
+</div> 

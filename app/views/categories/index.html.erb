@@ -1,0 +1,27 @@
+<h1>Listing categories</h1>
+
+<table id="table_id" class="tablesorter" border="1">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Show</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+</thead>
+
+<tbody>
+<% @categories.each do |category| %>
+  <tr>
+    <td><%= category.name %></td>
+    <td><%= link_to image_tag("show.png", title: 'Show'), category %></td>
+    <td><%= link_to image_tag("edit.png", title:'Edit'), edit_category_path(category) %></td>
+    <td><%= link_to image_tag("delete.png", title: 'Destroy'), category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Category', new_category_path %>

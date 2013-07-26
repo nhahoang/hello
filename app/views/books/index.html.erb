@@ -1,0 +1,48 @@
+
+<h1><%= t("books.list")%></h1>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script>
+  $(function() {
+    var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $( "#tags" ).autocomplete({
+      source: availableTags
+    });
+  });
+  </script>
+
+<input type='button' onclick="find()" value="<%= t('books.delete_selected')%>"/><br/><br/>
+
+<div>
+  <lable for="tags">Tags: </lable>
+  <input id="tags"/>
+</div><br/><br/>
+
+<div id = "list">
+  <%= render "table" %>
+</div>
+<br />
+<%= link_to t('books.new'), new_book_path %>

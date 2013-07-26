@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  fullname: MyString
+  username: MyString
+  password_digest: MyString
+  role: 1
+
+two:
+  fullname: MyString
+  username: MyString
+  password_digest: MyString
+  role: 1
